@@ -1,2 +1,64 @@
-# spectrum
-An experimental and educational real-time audio spectrum analyzer for the terminal, written in C++23
+# Spectrum
+
+一个用 C++ 写的实时终端频谱分析器。
+
+这是一个**实验性、学习性质的项目**，主要是我拿来研究现代 C++、音频处理和 DSP 的。项目里的很多东西都还在探索中，接口和架构以后大概率还会继续改。
+
+简单来说，就是想自己从音频输入开始，一路把声音变成终端里的频谱图。
+
+## 目前在折腾什么
+
+* C++23
+* PortAudio 音频输入
+* 音频流和 buffer
+* Frame / Window / FFT
+* 频谱和 dB 计算
+* Attack / Release
+* 实时终端渲染
+* 一些现代 C++ 的 ranges、modules、concepts 等
+
+## 大概是怎么工作的
+
+目前的基本流程大概是：
+
+```text
+音频文件 / 设备
+   ↓
+Audio Stream
+   ↓
+Buffer
+   ↓
+Framing
+   ↓
+Window
+   ↓
+FFT
+   ↓
+频谱分析
+   ↓
+Terminal Renderer
+```
+
+## 为什么做这个
+
+就是写着玩，其实没有什么特别复杂的目的。
+
+一方面是因为我本身就在做电子音乐（请关注 LeoeL19 谢谢），对音频处理感兴趣，另一方面也是想借这个项目真正写一写现代 C++。
+
+所以这里可能会出现一些很奇怪的代码，也可能会有一些后来发现并不太好的设计。
+
+没关系，反正就是拿来学习的。
+
+## 目前的状态
+
+项目还在早期开发阶段。
+
+现在已经可以完成基本的实时频谱分析，但很多地方都还不算完善。
+
+**如果你只是想找一个成熟的终端频谱软件，这个项目可能不太适合你。**
+
+如果你也喜欢 C++、音频和 DSP，倒是可以一起看看。
+
+## License
+
+MIT
